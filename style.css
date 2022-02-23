@@ -1,0 +1,47 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --dark: #121212;
+}
+body{
+  min-height: 100vh;
+  background: var(--dark);
+  overflow: hidden;
+}
+
+span{
+  position: absolute;
+  filter: drop-shadow(0 0 15px rgba(0,0,0,.5));
+  animation: fadeInOut 1s linear infinite;
+}
+@keyframes fadeInOut{
+  0%,100%{
+    opacity: 0;
+  }
+  20%,80%{
+    opacity: 1;
+  }
+}
+span:hover{
+  pointer-events: none;
+}
+span::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(img/hrt.png);
+  background-size: cover;
+  animation: mvShape 1s linear infinite;
+}
+@keyframes mvShape{
+  0%{
+    transform: translate(0) rotate(0deg);
+  }
+  100%{
+    transform: translate(300px) rotate(360deg);
+  }
+}
